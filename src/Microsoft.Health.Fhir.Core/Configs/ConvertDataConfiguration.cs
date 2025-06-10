@@ -57,5 +57,11 @@ namespace Microsoft.Health.Fhir.Core.Configs
         /// Enable the performance telemetry logging.
         /// </summary>
         public bool EnableTelemetryLogger { get; set; } = false;
+
+        /// <summary>
+        /// Custom HL7 templates file in tar.gz package to use for TemplateCollectionReference "microsofthealth/hl7v2templates:default".
+        /// e.g: "/app/Templates/Hl7v2.tar.gz"
+        /// </summary>
+        public string CustomHl7TemplatesFile { get; set; }
     }
 }
