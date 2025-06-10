@@ -117,3 +117,9 @@ Make a call to the $convert-data API specifying your template reference in the t
 `<RegistryServer>/<imageName>@<imageDigest>`
 
 `<RegistryServer>/<imageName>:<imageTag>` 
+
+Added support to replace "microsofthealth/hl7v2templates:default" in cache with custom templates from a specified .tar.gz file
+in FhirServer__Operations__ConvertData__CustomHl7TemplatesFile configuration. 
+Make sure the rootTemplate *.liquid files are in package root, not under a folder. Sample command to create Hl7v2.tar.gz package from "Hl7v2" templates folder:
+``tar -czf Hl7v2.tar.gz -C Hl7v2 .``
+You can put custom templates as tar.gz package in a folder or volume mount and set ``microsofthealth/hl7v2templates:default`` as templateCollectionReference. Also set FhirServer__Operations__ConvertData__CustomHl7TemplatesFile configuration like "/app/Templates/Hl7v2.tar.gz"
